@@ -48,14 +48,16 @@ export default function Home() {
   if (!contract || !address) return;
 
   async function fetchOwner() {
-    try {
-      const owner = await contract.owner();
-      setOwnerAddress(owner);
-      setIsOwner(address.toLowerCase() === owner.toLowerCase());
-    } catch (e) {
-      console.error(e);
-    }
+  if (!contract) return; // 
+  try {
+    const owner = await contract.owner();
+    setOwnerAddress(owner);
+    setIsOwner(address.toLowerCase() === owner.toLowerCase());
+  } catch (e) {
+    console.error(e);
   }
+}
+
 
   fetchOwner();
 }, [contract, address]);
