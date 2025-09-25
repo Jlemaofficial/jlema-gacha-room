@@ -2,10 +2,10 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   eslint: {
-    ignoreDuringBuilds: true, // ✅ lewati error lint saat build
+    ignoreDuringBuilds: true,   // ✅ Abaikan linting di Vercel
   },
   typescript: {
-    ignoreBuildErrors: true, // ✅ opsional: skip type error juga
+    ignoreBuildErrors: true,    // ✅ Abaikan type error di Vercel
   },
 };
 
