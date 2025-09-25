@@ -129,7 +129,7 @@ async function withdrawCleanHandler() {
   if (!contract || !signer) return alert("Contract or wallet not ready");
   try {
     const contractWithSigner = contract.connect(signer);
-    const tx = await contractWithSigner.withdrawClean(); // assumes no args
+    const tx = await (contractWithSigner as any) .withdrawClean(); // assumes no args
     await tx.wait();
     alert("Withdraw successful!");
   } catch (e) {
